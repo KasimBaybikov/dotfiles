@@ -1,0 +1,35 @@
+#ALIASES
+alias cdd='cd /Users/kasimbaybikov/Desktop/'
+alias py='python3'
+alias py3='python3'
+alias ll='ls -l'
+alias du1='du -h -d1 | sort -h'
+alias flags="echo "-Iincludes" > compile_flags.txt && echo "-I/Library/Developer/CommandLineTools/usr/include/c++/v1" >> compile_flags.txt"
+alias tf="terraform"
+
+setopt nobeep
+
+export GOPATH=$HOME/.brew/Cellar/go/1.18
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$HOME/scripts/:$GOBIN:$HOME/.local/nvim/bin/
+##TELEGRAM
+export PY_HB_TOKEN=''
+##DECORT MR4
+export DECORT_APP_ID=''
+export DECORT_APP_SECRET=''
+##DECORT ALFA
+#export DECORT_APP_ID=''
+#export DECORT_APP_SECRET=''
+#FOR LEAKS
+#export MallocStackLoggingNoCompact='1'
+
+autoload -Uz compinit && compinit
+
+# Load config scripts
+source $HOME/.brewconfig.zsh
+source $HOME/.prompt.zsh
+
+#AUTOCOMPLETE
+source <(kubectl completion zsh)
+source <(minikube completion zsh)
+complete -o nospace -C /usr/local/bin/terraform terraform
