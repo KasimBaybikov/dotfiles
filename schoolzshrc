@@ -1,0 +1,32 @@
+export PATH=$PATH:/goinfre/rvernon/go/bin:/Users/rvernon/scripts/
+export PROMPT="%m%~%# "
+export GOPATH="/goinfre/rvernon/go"
+
+if [ -d $HOME/Library/Application\ Support/Google/Chrome/Default/Service\ Worker/CacheStorage/ ]
+then
+	rm -rf $HOME/Library/Application\ Support/Google/Chrome/Default/Service\ Worker/CacheStorage/
+fi
+
+rm -rf $HOME/Library/Caches/
+mkdir -p /Users/rvernon/goinfre/Caches/
+ln -fs /Users/rvernon/goinfre/Caches /Users/rvernon/Library/Caches
+
+if ! [ -d /goinfre/rvernon/go/ ]
+then
+	source ~/scripts/go_isntall.sh &
+fi
+
+alias cdd="cd /Users/rvernon/Desktop/"
+alias du1="du -h -d1 | sort -h"
+alias ll="ls -lh"
+alias Makefile="/Users/rvernon/scripts/Makefile/makefile.sh"
+alias flags="echo "-Iincludes" > compile_flags.txt && echo "-I/Library/Developer/CommandLineTools/usr/include/c++/v1" >> compile_flags.txt"
+alias ncl="nc localhost 8080"
+
+setopt nobeep
+
+autoload -U compinit
+compinit
+
+# Load Homebrew config script
+source $HOME/.brewconfig.zsh
