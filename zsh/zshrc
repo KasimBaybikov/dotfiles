@@ -27,6 +27,8 @@ autoload -Uz compinit && compinit
 
 # Load config scripts
 source $HOME/.brewconfig.zsh
+#script from https://github.com/jeffreytse/zsh-vi-mode/blob/master/zsh-vi-mode.zsh
+source $HOME/.zsh-vi-mode.zsh
 source $HOME/.prompt.zsh
 
 #AUTOCOMPLETE
